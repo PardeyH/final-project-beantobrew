@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'Mostley Script';
+  src: url("/assets/fonts/mostley_script.ttf") format('truetype');
+}
+
+
+.logo {
+  font-family: Mostley Script, sans-serif;
+  background-color: #f5efeb;
+  font-size: 60px;
+  text-align: center;
+  outline: 3px solid #855c3d;
+  padding: 30px 35px 25px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  outline-offset: -8px;
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #855c3d, #e66707, #855c3d) 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.home-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  z-index: 2;
+}
+
+.login,.home {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px 15px 10px 15px;
+  margin: 140px 20px 20px 20px;
+  background-color: #463123;
+  color: white;
+  cursor: pointer;
+  border: solid #463123 1px;
+  z-index: 3;
+}
+
+button:hover, .login:hover, .home:hover {
+  background-color: rgba(200, 154, 104, 0.9);
+  color: black;
+}
+
+.registration-header {
+  font-size: 30px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.register-container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 10px 20px 20px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(244, 244, 244, 0.6);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.register-container label {
+  font-size: 18px;
+}
+
+#username {
+  margin: 10px 20px 5px 90px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+#password {
+  margin: 10px 20px 5px 92px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+#confirmPassword {
+  margin: 10px 20px 5px 25px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.register-container .register-button {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px 15px;
+  background-color: #463123;
+  color: white;
+  cursor: pointer;
+  border: solid #463123 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto 0;
+  z-index: 2;
+}
+
+.register-container .register-button:hover {
+  background-color: rgba(200, 154, 104, 0.9);
+  color: black;
+}
+
+.register-container .info {
+  font-size: 20px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+.password-input {
+  position: relative;
+}
+
+.match-password {
+  color: green;
+}
+
+.no-match-password {
+  color: #463123;
+}
+
+.background-image-container {
+  background-image: url("/assets/images/homepage_login_register.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 120px;
+  left: 0;
+  opacity: 0.5;
+  z-index: -1;
+}

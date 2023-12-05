@@ -1,0 +1,28 @@
+<div class="logo">Bean to Brew</div>
+<br>
+<div class="home-login-container">
+  <button class="home" routerLink="/">Home</button>
+  <button class="login" routerLink="/login">Login</button>
+</div>
+<div class="register-container">
+  <form>
+    <h4 class="registration-header">Registration</h4>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" [(ngModel)]="credentials.username">
+   <br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" [(ngModel)]="credentials.password">
+    <br>
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword">
+    <br>
+    <button (click)="register()" class="register-button" [disabled]="!credentials.username || !credentials.password">
+      Register Now
+    </button>
+  </form>
+  <div class="info" [ngClass]="{'match-password': passwordsMatch, 'no-match-password': !passwordsMatch}">
+    {{info | json }}
+  </div>
+</div>
+<div class="background-image-container">
+</div>

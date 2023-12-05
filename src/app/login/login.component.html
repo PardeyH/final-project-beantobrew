@@ -1,0 +1,24 @@
+<div class="logo">Bean to Brew</div>
+<br>
+<div class="home-register-container">
+  <button class="home" routerLink="/">Home</button>
+  <button class="register" routerLink="/register">Register</button>
+</div>
+<div class="login-container">
+  <form>
+    <h4 class="login-header">Login</h4>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" [(ngModel)]="credentials.username">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" [(ngModel)]="credentials.password">
+    <button (click)="sendLogin()" class="login-button">Login</button>
+  </form>
+
+<div *ngIf="info">
+  {{info | json }}
+</div>
+
+<!--<button (click)="sendLogout()" class="logout-button">Logout</button>-->
+</div>
+<div class="background-image-container">
+</div>

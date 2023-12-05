@@ -1,0 +1,31 @@
+  <div class="image-container">
+    <img #levelImage class="level_image" [src]="levelImageUrl" alt="current level" usemap="#level-map" (load)="onImageLoad()">
+    <img #hintImage class="hint-image" [style.left.px]="imageX" [style.top.px]="imageY" src="../../assets/images/happy_car.png" alt="Hint">
+    <div class="top-right-corner">
+      <button (click)="getQuestion()">{{ showQuestion ? 'Hide question' : 'Show question' }}</button><br>
+      <button (click)="showHint()">Hint</button>
+    </div>
+  </div>
+
+  <map *ngIf="carResponse && imageLoaded" name="level-map">
+    <area *ngFor="let trivia of carResponse.triviaList" shape="rect" [coords]="
+    calculateScaledCoordinates(trivia.triviaCoordinates, levelImage)"
+          alt="{{ trivia.triviaText }}"
+          (mouseenter)="showInfo(trivia)"
+          (mouseleave)="hideInfo()">
+  </map>
+
+<div *ngIf="carResponse" class="text-box" [style.display]="showText ? 'block' : 'none'">
+  <strong style="font-size: 20px">{{ selectedTrivia ? selectedTrivia.triviaText : '' }}</strong>
+</div>
+
+<div *ngIf="carResponse" #questionBox class="question-box" [style.display]="showQuestion ? 'block' : 'none'">
+  <strong>{{ carResponse.triviaQuestion.question }}</strong><br>
+  <form (submit)="checkAnswer()">
+    <br>
+    <input type="text" [(ngModel)]="userAnswer" name="userAnswer" placeholder="Your Answer"><br>
+    <br>
+    <button class="check-answer-button" type="submit">Check Answer</button>
+  </form>
+  <p *ngIf="showMessage" [ngStyle]="messageStyle">{{ message }}</p>
+</div>

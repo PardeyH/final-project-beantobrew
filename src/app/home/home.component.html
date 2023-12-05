@@ -1,0 +1,38 @@
+<div class="logo">Bean to Brew</div>
+<br>
+<div class="login-register-container">
+  <ng-container *ngIf="authService.getIsLoggedIn(); else showLogin">
+    <button class="logout" (click)="logoutAndRedirect()">Logout</button>
+  </ng-container>
+  <ng-template #showLogin>
+  <button class="login" routerLink="/login">Login</button>
+  </ng-template>
+  <button class="register" routerLink="/register">Register</button>
+</div>
+<div class="text-box">
+    <div class="brand-name">Bean to Brew</div> is a game that teaches you about the coffee making process.
+  <br>
+  <p>
+    <strong>Gameplay:</strong> Move the cursor over the pictures to learn about the coffee making process from harvesting
+    the coffee beans to pouring freshly ground coffee into your cup. Once you have read all the information you can answer the question and if correctly answered move on to the next level.
+    <br>
+    <br>
+    <strong>Scoring:</strong> For each correct answer you get points.
+    <br>
+    <br>
+    <strong>Winning:</strong> You win the game by answering all the questions correctly.
+  </p>
+  <br>
+  <p *ngIf="!authService.getIsLoggedIn()" class="starting-the-game">
+    <strong>Starting the game:</strong> Please login or register to start the game. Happy brewing!
+  </p>
+    <div class="start-button-container" *ngIf="authService.getIsLoggedIn()">
+    <button class="start-button" routerLink="/level">Start the game</button>
+  </div>
+</div>
+
+<div class="background-image-container">
+</div>
+
+
+

@@ -1,0 +1,30 @@
+<link href="https://fonts.googleapis.com/css?family=Cinzel|Dancing+Script|Playfair+Display&display=swap" rel="stylesheet">
+
+<img [src]="imageUrl" alt="Certificate" class="background-image">
+  <div class="score-content">
+   <!-- <h1>{{ userName }}</h1>!-->
+    <div class="transparent-background">
+      <div class = "message-container">
+        <span class="cinzel-font">{{ message1 }}</span><br>
+      </div>
+      <div class = "message-container">
+      <span class="cinzel-font"><strong> {{ message2 }} </strong></span><br>
+      </div>
+        <div class = "message-container">
+      <span class="cinzel-font">{{ message3 }}</span><br>
+        </div>
+          <div class = "message-container">
+      <span class="dancing-script-font">{{ message4 }}</span><br>
+          </div>
+            <div class = "message-container">
+      <span class="cinzel-font">{{ message5 }}</span><br>
+            </div>
+    </div>
+  </div>
+
+  <div class = "top-right-corner">
+  <button class="home" (click)="navigateToHomepage()">Home</button>
+  </div>
+<div class="bottom-text">
+  <span class="mostley-script-font">Bean to Brew</span>
+</div>
